@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Hiru!</title>
+  
+  <!-- Open Graph Meta Tags (Facebook, WhatsApp, etc.) -->
+  <meta property="og:title" content="🎉 Happy Birthday, Hiru! 🎉" />
+  <meta property="og:description" content="A special birthday website celebrating Hiru's amazing journey through the years. Click to see the timeline and surprise!" />
+  <meta property="og:image" content="assets/cake2.png" />
+  <meta property="og:image:alt" content="Birthday cake for Hiru's special day" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hiru's Birthday Celebration" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🎉 Happy Birthday, Hiru! 🎉" />
+  <meta name="twitter:description" content="A special birthday website celebrating Hiru's amazing journey through the years. Click to see the timeline and surprise!" />
+  <meta name="twitter:image" content="assets/cake2.png" />
+  <meta name="twitter:image:alt" content="Birthday cake for Hiru's special day" />
+  
+  <!-- Additional Meta Tags -->
+  <meta name="description" content="A special interactive birthday website for Hiru featuring a timeline, background music, floating balloons, and birthday surprises!" />
+  <meta name="keywords" content="birthday, celebration, Hiru, timeline, interactive, music, balloons" />
+  <meta name="author" content="Shinku" />
+  
+  <!-- Font Awesome for better icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-cake">🎂</div>
+      <h1 class="loading-title">Preparing Hiru's Birthday Surprise...</h1>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <div class="loading-balloons">
+        <span class="loading-balloon">🎈</span>
+        <span class="loading-balloon">🎈</span>
+        <span class="loading-balloon">🎈</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="slideshow-background">
+    <!-- Background slideshow handled by CSS -->
+  </div>
+
+  <!-- Floating Balloons -->
+  <div class="balloons">
+    <div class="balloon balloon-1">🎈</div>
+    <div class="balloon balloon-2">🎈</div>
+    <div class="balloon balloon-3">🎈</div>
+    <div class="balloon balloon-4">🎈</div>
+    <div class="balloon balloon-5">🎈</div>
+    <div class="balloon balloon-6">🎈</div>
+  </div>
+
+  <div class="wish-container">
+    <h1 class="retro-glow">🎉 Happy Birthday, Hiru! 🎉</h1>
+    <img src="assets/cake2.png" alt="Birthday Cake" class="cake" id="cakeBtn" />
+    <p class="tap-instruction">🎂 Tap the cake for a special surprise! 🎂</p>
+  </div>
+
+  <div id="popupCard" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>Dear Hiru,</h2>
+      <p>May your day be as awesome as your hair in your baby pics! 🎈</p>
+    </div>
+  </div>
+
+  <button id="musicBtn"><i class="fas fa-play"></i></button>
+  <button id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+  <audio id="bgMusic" loop autoplay muted>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="timeline">
+    <h2>How You've Grown 💪</h2>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <div class="timeline-item" data-age="1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 1</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year1.jpg" alt="Hiru at 1" />
+          </div>
+          <div class="timeline-description">The adventure begins! 🍼</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 5</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year5.jpg" alt="Hiru at 5" />
+          </div>
+          <div class="timeline-description">Growing up fast! 🎒</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="10">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 10</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year10.jpg" alt="Hiru at 10" />
+          </div>
+          <div class="timeline-description">Double digits! 🎮</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="15">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 15</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year15.jpg" alt="Hiru at 15" />
+          </div>
+          <div class="timeline-description">Teen vibes! 🔥</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="18">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 18</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year18.jpg" alt="Hiru at 18" />
+          </div>
+          <div class="timeline-description">Officially an adult! 🎓</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="21">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 21</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year21.jpg" alt="Hiru at 21" />
+          </div>
+          <div class="timeline-description">Living the dream! ✨</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="25">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 25</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year25.jpg" alt="Hiru at 25" />
+          </div>
+          <div class="timeline-description">Quarter century milestone! 🚀</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-age="30">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Age 30</div>
+          <div class="timeline-image-container">
+            <img src="assets/images/year30.jpg" alt="Hiru at 30" />
+          </div>
+          <div class="timeline-description">Thriving thirties! 🌟</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ by your awesome cousin – Shinku<br />
+    May your year be filled with joy, ramen, and no bugs 🧧
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
