@@ -251,3 +251,89 @@ setTimeout(() => {
     hideLoadingScreen();
   }
 }, 10000); // Max 10 seconds loading time
+
+// Photo Carousel Logic
+class PhotoCarousel {
+  constructor() {
+    this.currentSlide = 0;
+    this.slides = document.querySelectorAll('.carousel-slide');
+    this.dots = document.querySelectorAll('.dot');
+    this.prevBtn = document.getElementById('prevBtn');
+    this.nextBtn = document.getElementById('nextBtn');
+    this.totalSlides = this.slides.length;
+    this.autoPlayInterval = null;
+    
+    this.init();
+  }
+  
+  init() {
+    // Add event listeners
+    this.prevBtn.addEventListener('click', () => this.prevSlide());
+    this.nextBtn.addEventListener('click', () => this.nextSlide());
+    
+    // Add dot navigation
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => this.goToSlide(index));
+    });
+    
+    // Auto-play carousel
+    this.startAutoPlay();
+    
+    // Pause auto-play on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
+    carouselContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') this.prevSlide();
+      if (e.key === 'ArrowRight') this.nextSlide();
+    });
+  }
+  
+  goToSlide(index) {
+    // Remove active class from current slide and dot
+    this.slides[this.currentSlide].classList.remove('active');
+    this.dots[this.currentSlide].classList.remove('active');
+    
+    // Update current slide
+    this.currentSlide = index;
+    
+    // Add active class to new slide and dot
+    this.slides[this.currentSlide].classList.add('active');
+    this.dots[this.currentSlide].classList.add('active');
+    
+    // Transform the carousel track
+    const track = document.getElementById('carouselTrack');
+    track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+  }
+  
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+    this.goToSlide(nextIndex);
+  }
+  
+  prevSlide() {
+    const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+    this.goToSlide(prevIndex);
+  }
+  
+  startAutoPlay() {
+    this.stopAutoPlay(); // Clear any existing interval
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Change slide every 5 seconds
+  }
+  
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = new PhotoCarousel();
+});
