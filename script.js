@@ -419,10 +419,10 @@ class MobileCarousel {
     // Transform the carousel track
     this.track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
     
-    // Haptic feedback on mobile devices
-    if ('vibrate' in navigator) {
-      navigator.vibrate(50);
-    }
+    // Haptic feedback on mobile devices (disabled)
+    // if ('vibrate' in navigator) {
+    //   navigator.vibrate(50);
+    // }
   }
   
   nextSlide() {
